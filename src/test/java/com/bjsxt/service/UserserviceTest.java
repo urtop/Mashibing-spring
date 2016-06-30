@@ -15,9 +15,9 @@ public class UserserviceTest {
     @org.junit.Test
     public void add() throws Exception {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext();
-        Userservice userservice = new Userservice();
-        UserDAO userDAO = (UserDAO) beanFactory.getBean("u");
-        userservice.setUserDAO(userDAO);
+        Userservice userservice = (Userservice) beanFactory.getBean("userService");
+//        UserDAO userDAO = (UserDAO) beanFactory.getBean("u");
+//        userservice.setUserDAO(userDAO);
         User u = new User();
         userservice.add(u);
 
