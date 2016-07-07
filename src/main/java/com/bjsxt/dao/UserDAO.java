@@ -7,4 +7,5 @@ import com.bjsxt.model.User;
  */
 public interface UserDAO {
     void save(User U);
+    void delete(User U);
 }
