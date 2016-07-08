@@ -1,36 +1,18 @@
 package com.bjsxt.aop;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
 
-/**
- * Created by  Mark L Tao on 2016/7/6 16:10.
- */
-public class LogInterceptor implements InvocationHandler {
-    private Object target;
+@Component
+@Aspect
+public class LogInterceptor {
 
-    public void beforeMethod(Method m) {
-        System.out.println(m.getName() + "  Start!...");
+    @Before("execution(public  void com.bjsxt.service.Userservice.add(com.bjsxt.model.User) )")
+    public void before() {
+        System.out.println("AOP start!");
     }
-
-    public void afterMethod() {
-        System.out.println("....End!");
-    }
-
-    public Object getTarget() {
-        return target;
-    }
-
-    public void setTarget(Object target) {
-        this.target = target;
-    }
-
-
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        beforeMethod(method);
-        method.invoke(target, args);
-        return null;
-    }
-
 
 }
+
+
