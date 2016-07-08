@@ -7,6 +7,5 @@
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:annotation-config/>
     <context:component-scan base-package="com.bjsxt"/>
-
-    <!--<bean id="userservice" class="com.bjsxt.service.Userservice"/>-->
+     <aop:aspectj-autoproxy />
 </beans>
