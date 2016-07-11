@@ -12,11 +12,12 @@ public class UserDAOImpl implements UserDAO {
 
     public void save(User U) {
         System.out.println("User Saved!");
+        throw new RuntimeException("Exception fot test!");
     }
 
     public void delete(User U) {
         System.out.println("User Deleted!");
     }
-
+    
 
 }
