@@ -54,5 +54,16 @@
             <artifactId>commons-pool</artifactId>
             <version>1.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.7.ga</version>
+        </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>java.net</id>
+            <url>https://maven.java.net/content/repositories/public/</url>
+        </repository>
+    </repositories>
 </project>

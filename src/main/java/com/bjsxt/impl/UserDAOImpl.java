@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
         try {
             Connection connection = dataSource.getConnection();
             Random rand = new Random();
-            int id  = 100 + rand.nextInt((100 - 5) + 1);
+            int id  = 1 + rand.nextInt((100 ) + 1);
             connection.createStatement().executeUpdate("insert into user VALUES ("+id+",'Tao Li')");
             connection.close();
         } catch (SQLException e) {
