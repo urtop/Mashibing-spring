@@ -2,6 +2,8 @@ package com.bjsxt.impl;
 
 import com.bjsxt.dao.UserDAO;
 import com.bjsxt.model.User;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -17,18 +19,24 @@ import java.util.Random;
 public class UserDAOImpl implements UserDAO {
 
     private DataSource dataSource;
+    private SessionFactory sessionFactory;
+
     public void save(User U) {
         try {
-            Connection connection = dataSource.getConnection();
-            Random rand = new Random();
-            int id  = 1 + rand.nextInt((100 ) + 1);
-            connection.createStatement().executeUpdate("insert into user VALUES ("+id+",'Tao Li')");
-            connection.close();
-        } catch (SQLException e) {
+            Session s = sessionFactory.openSession();
+            s.beginTransaction();
+            U.setName("Tao Li");
+            s.save(U);
+            s.getTransaction().commit();
+//            Connection connection = dataSource.getConnection();
+//            Random rand = new Random();
+//            int id = 1 + rand.nextInt((100) + 1);
+//            connection.createStatement().executeUpdate("insert into user VALUES (" + id + ",'Tao Li')");
+//            connection.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println("User Saved!");
-//        throw new RuntimeException("Exception fot test!");
     }
 
     public void delete(User U) {
@@ -43,5 +51,14 @@ public class UserDAOImpl implements UserDAO {
     @Resource
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    @Resource
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 }

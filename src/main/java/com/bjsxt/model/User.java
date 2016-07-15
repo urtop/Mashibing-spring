@@ -1,21 +1,38 @@
 package com.bjsxt.model;
 
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * Created by Mark on 2016/6/29.
  */
-@Component
+
+@Entity
 public class User {
-    public String getUsername() {
-        return username;
+
+    public String getName() {
+        return name;
     }
 
-    public String getPassword() {
-        return password;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    private String username;
-    private String password;
+    @Id
+    @GeneratedValue
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private String name;
+    private int id;
 
 }
