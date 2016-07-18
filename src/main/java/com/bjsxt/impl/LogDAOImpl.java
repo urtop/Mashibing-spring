@@ -24,7 +24,6 @@ public class LogDAOImpl implements LogDAO {
         Session s = sessionFactory.getCurrentSession();
         s.save(log);
         System.out.println("Log Saved!");
-
     }
 
 
