@@ -7,6 +7,7 @@ import com.bjsxt.model.Log;
 import com.bjsxt.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -39,11 +40,17 @@ public class Userservice {
         this.logDAO = logDAO;
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     public void add(User u) {
         userDAO.save(u);
         Log log = new Log();
         log.setMessage("a user saved!");
         logDAO.save(log);
+    }
+
+    public User getUser(int id) {
+
+        return new User();
+
     }
 }
