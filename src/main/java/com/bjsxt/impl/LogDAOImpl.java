@@ -17,7 +17,6 @@ import javax.sql.DataSource;
 public class LogDAOImpl implements LogDAO {
 
 
-    private DataSource dataSource;
     private SessionFactory sessionFactory;
 
     public void save(Log log) {
@@ -27,14 +26,6 @@ public class LogDAOImpl implements LogDAO {
     }
 
 
-    public DataSource getDataSource() {
-        return dataSource;
-    }
-
-    @Resource
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;

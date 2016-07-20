@@ -26,6 +26,10 @@ public class UserDAOImpl implements UserDAO {
         System.out.println("User Deleted!");
     }
 
+    public void find(int id) {
+
+    }
+
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

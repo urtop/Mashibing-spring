@@ -10,4 +10,5 @@ import org.springframework.stereotype.Component;
 public interface UserDAO {
     void save(User U);
     void delete(User U);
+    void  find(int id);
 }
