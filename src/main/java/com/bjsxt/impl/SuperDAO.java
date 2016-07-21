@@ -8,16 +8,10 @@ import javax.annotation.Resource;
 /**
  * Created by  Mark L Tao on 2016/7/20 17:58.
  */
-public class SuperDAO {
-    private HibernateTemplate hibernateTemplate;
+public class SuperDAO extends HibernateDaoSupport {
 
-
-    public HibernateTemplate getHibernateTemplate() {
-        return hibernateTemplate;
-    }
-
-    @Resource
-    public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-        this.hibernateTemplate = hibernateTemplate;
+    @Resource(name = "hibernateTemplate")
+    public void setSuperHibernateTemplate(HibernateTemplate hibernateTemplate) {
+        super.setHibernateTemplate(hibernateTemplate);
     }
 }

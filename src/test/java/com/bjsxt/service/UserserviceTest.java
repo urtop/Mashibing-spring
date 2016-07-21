@@ -20,11 +20,6 @@ public class UserserviceTest {
 
     @Test
     public void testProxy() {
-//        UserDAO userDAO = new UserDAOImpl();
-//        LogInterceptor logInterceptor = new LogInterceptor();
-//        UserDAO userDaoProxy = (UserDAO) Proxy.newProxyInstance(userDAO.getClass().getClassLoader(), new Class[]{UserDAO.class}, logInterceptor);
-//        System.out.println(userDaoProxy.getClass().getName());
-//        userDaoProxy.save(new User());
-//        userDaoProxy.delete(new User());
+
     }
 }
