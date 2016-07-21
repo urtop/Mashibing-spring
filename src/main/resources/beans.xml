@@ -54,4 +54,8 @@
     </bean>
 
     <tx:annotation-driven transaction-manager="txManager"/>
+
+    <!--<bean id="superDAO" class="com.bjsxt.impl.SuperDAO">-->
+        <!--<property name="hibernateTemplate" ref="hibernateTemplate"/>-->
+    <!--</bean>-->
 </beans>
