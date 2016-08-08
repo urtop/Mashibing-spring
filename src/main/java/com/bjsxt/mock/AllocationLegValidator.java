@@ -29,7 +29,6 @@ public class AllocationLegValidator {
 
     private String getBlockTradeCcyPair(AllocationSnapshot snapshot) {
         BlockTradeSnapshot blockTradeSnapshot = snapshot.getBlocks().get(0);
-
         String ccyPair = blockTradeSnapshot.getQuoteConvention();
         Validate.notEmpty(ccyPair, "Illegal to create pair instance from null pair string");
         if (ccyPair.length() != 6) {
